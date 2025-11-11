@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="he">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>דיון ערכי - חנוכה - תנועת הנוער אור ישראלי</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/discussion.css">
+    <link rel="stylesheet" href="css/dark-mode.css">
+    <script src="js/config.js"></script>
+    <script src="js/common.js"></script>
+    <script src="js/discussion.js"></script>
+    <script>
+        // הגדרת מזהה הדיון הנוכחי
+        window.DISCUSSION_ID = 'hanukkah-values';
+    </script>
+</head>
+<body>
+    <div id="loading" class="loading hidden">
+        <div class="spinner"></div>
+        <p>טוען...</p>
+    </div>
+
+    <header class="modern-header">
+        <div class="header-content">
+            <div class="logo-container">
+                <div class="main-logo">
+                    <img src="assets/logos/or-israeli-logo.png" alt="אור ישראלי">
+                </div>
+            </div>
+            <a href="index.html" class="back-button">
+                <span class="material-icons">arrow_back</span>
+                חזרה לדף הבית
+            </a>
+        </div>
+    </header>
+
+    <main class="modern-main">
+        <section class="discussion-area">
+            <h2 class="discussion-title"><span class="hanukkah-icon">🕎</span> דיון ערכי - חנוכה <span class="hanukkah-icon">🕎</span></h2>
+            
+            <div class="discussion-intro-main">
+                <p class="intro-main-text">
+                    ברוכים הבאים לדיון ערכי וחינוכי על חנוכה! 
+                    <br>
+                    בדיון זה נעסוק בשאלות שמעוררות מחשבה על משמעות החג, על ערכים, על זהות ועל האור שאנחנו מביאים לעולם.
+                    <br><br>
+                    אתם מוזמנים לקרוא את השאלות, לחשוב עליהן, ולשתף את דעתכם ואת המחשבות שלכם עם הקהילה.
+                </p>
+            </div>
+
+            <!-- שאלות ערכיות-חינוכיות -->
+            <div class="source-block category-block">
+                <div class="category-header">
+                    <span class="category-icon">🔥</span>
+                    <strong>שאלות ערכיות-חינוכיות</strong>
+                </div>
+                <div class="questions-list">
+                    <div class="question-item">
+                        <span class="question-number">1.</span>
+                        <span class="question-text">למה לדעתך מדליקים נרות דווקא כל לילה עוד אחד - מה זה מלמד על הדרך להאיר את החיים?</span>
+                    </div>
+                    <div class="question-item">
+                        <span class="question-number">2.</span>
+                        <span class="question-text">"מעט אור דוחה הרבה מן החושך" - איך אתה מבין את המשפט הזה בחיים שלך היום?</span>
+                    </div>
+                    <div class="question-item">
+                        <span class="question-number">3.</span>
+                        <span class="question-text">בחנוכה נלחמו על הזכות להישאר נאמנים לעצמם - איפה בחיים שלנו היום צריך אומץ כזה?</span>
+                    </div>
+                    <div class="question-item">
+                        <span class="question-number">4.</span>
+                        <span class="question-text">אם היית "מכבי" של ימינו, נגד מה או בעד מה היית נלחם?</span>
+                    </div>
+                    <div class="question-item">
+                        <span class="question-number">5.</span>
+                        <span class="question-text">חנוכה הוא חג של זהות - מה אתה חושב שיכול לעזור לבני נוער להרגיש יותר חיבור למסורת?</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- שאלות אמונה וחיים -->
+            <div class="source-block category-block">
+                <div class="category-header">
+                    <span class="category-icon">✨</span>
+                    <strong>שאלות אמונה וחיים</strong>
+                </div>
+                <div class="questions-list">
+                    <div class="question-item">
+                        <span class="question-number">1.</span>
+                        <span class="question-text">למה לדעתך ה' עשה נס דווקא עם פך השמן - ולא משהו גדול יותר?</span>
+                    </div>
+                    <div class="question-item">
+                        <span class="question-number">2.</span>
+                        <span class="question-text">האם אתה מאמין שגם היום יש ניסים? איך הם נראים לדעתך?</span>
+                    </div>
+                    <div class="question-item">
+                        <span class="question-number">3.</span>
+                        <span class="question-text">איך אפשר "להדליק אור" בחיים של מישהו אחר בלי לדבר בכלל?</span>
+                    </div>
+                    <div class="question-item">
+                        <span class="question-number">4.</span>
+                        <span class="question-text">בחנוכה אנחנו מדליקים נרות כדי שכולם יראו - מה המסר בזה לגבי הדרך שבה אנחנו חיים?</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ערכים ואור פנימי -->
+            <div class="source-block category-block">
+                <div class="category-header">
+                    <span class="category-icon">🌟</span>
+                    <strong>ערכים ואור פנימי</strong>
+                </div>
+                <div class="questions-list">
+                    <div class="question-item">
+                        <span class="question-number">1.</span>
+                        <span class="question-text">מה בעיניך יותר חשוב - לשנות את העולם או לשנות את עצמך?</span>
+                    </div>
+                    <div class="question-item">
+                        <span class="question-number">2.</span>
+                        <span class="question-text">איזה דבר קטן שאתה עושה גורם לך להרגיש שאתה "מאיר" את הסביבה שלך?</span>
+                    </div>
+                    <div class="question-item">
+                        <span class="question-number">3.</span>
+                        <span class="question-text">בחנוכה כל נר קטן מצטרף ויוצר אור גדול - איזה כוח יש בעיניך לחיבור בין אנשים?</span>
+                    </div>
+                    <div class="question-item">
+                        <span class="question-number">4.</span>
+                        <span class="question-text">מה לדעתך הכוונה כשאומרים "להיות אור לאחרים"?</span>
+                    </div>
+                    <div class="question-item">
+                        <span class="question-number">5.</span>
+                        <span class="question-text">איך מתמודדים כשיש חושך פנימי - תקופות קשות, חוסר מוטיבציה או חוסר אמונה בעצמך?</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- אומץ וזהות -->
+            <div class="source-block category-block">
+                <div class="category-header">
+                    <span class="category-icon">⚔</span>
+                    <strong>אומץ וזהות</strong>
+                </div>
+                <div class="questions-list">
+                    <div class="question-item">
+                        <span class="question-number">1.</span>
+                        <span class="question-text">המכבים עמדו נגד כולם - איפה בחיים שלך אתה מרגיש לפעמים שצריך אומץ להיות שונה?</span>
+                    </div>
+                    <div class="question-item">
+                        <span class="question-number">2.</span>
+                        <span class="question-text">מתי לאחרונה הרגשת שאתה עושה משהו נכון גם אם לא כולם הסכימו איתך?</span>
+                    </div>
+                    <div class="question-item">
+                        <span class="question-number">3.</span>
+                        <span class="question-text">מה זה "גבורה אמיתית" בעיניך - לנצח אחרים או לנצח את עצמך?</span>
+                    </div>
+                    <div class="question-item">
+                        <span class="question-number">4.</span>
+                        <span class="question-text">איך אפשר להישאר נאמן לערכים שלך גם כשחברים סביבך חושבים אחרת?</span>
+                    </div>
+                    <div class="question-item">
+                        <span class="question-number">5.</span>
+                        <span class="question-text">מה אתה חושב שהיום נוער "נלחם עליו" - ומה היה שווה בעיניך להילחם עליו באמת?</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- אמונה, תקווה וחיים -->
+            <div class="source-block category-block">
+                <div class="category-header">
+                    <span class="category-icon">✨</span>
+                    <strong>אמונה, תקווה וחיים</strong>
+                </div>
+                <div class="questions-list">
+                    <div class="question-item">
+                        <span class="question-number">1.</span>
+                        <span class="question-text">אם היית צריך להסביר למישהו שאין לו אמונה - למה בכל זאת כדאי "להאמין במשהו" - מה היית אומר לו?</span>
+                    </div>
+                    <div class="question-item">
+                        <span class="question-number">2.</span>
+                        <span class="question-text">למה לדעתך אנשים מחפשים אמונה דווקא כשקשה להם?</span>
+                    </div>
+                    <div class="question-item">
+                        <span class="question-number">3.</span>
+                        <span class="question-text">האם אתה מאמין שכל דבר שקורה יש לו סיבה, או שהכול מקרי?</span>
+                    </div>
+                    <div class="question-item">
+                        <span class="question-number">4.</span>
+                        <span class="question-text">מה נותן לך תחושת משמעות בחיים - מה "האור" שלך?</span>
+                    </div>
+                    <div class="question-item">
+                        <span class="question-number">5.</span>
+                        <span class="question-text">חנוכה מזכיר שהשמן לא נגמר - מה עוזר לך להמשיך גם כשאין לך כוחות?</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- זהות ישראלית וקהילה -->
+            <div class="source-block category-block">
+                <div class="category-header">
+                    <span class="category-icon">💬</span>
+                    <strong>זהות ישראלית וקהילה</strong>
+                </div>
+                <div class="questions-list">
+                    <div class="question-item">
+                        <span class="question-number">1.</span>
+                        <span class="question-text">למה חשוב בעיניך לשמור על חיבור למסורת גם אם אתה לא שומר מצוות?</span>
+                    </div>
+                    <div class="question-item">
+                        <span class="question-number">2.</span>
+                        <span class="question-text">איך אתה מרגיש כשאתה מדליק נרות חנוכה - חיבור, נוסטלגיה, שקט, משהו אחר?</span>
+                    </div>
+                    <div class="question-item">
+                        <span class="question-number">3.</span>
+                        <span class="question-text">יש אנשים שאומרים שישראליות ויהדות זה שני דברים שונים - מה אתה חושב?</span>
+                    </div>
+                    <div class="question-item">
+                        <span class="question-number">4.</span>
+                        <span class="question-text">איך אפשר להפוך את "החג של האור" להזדמנות להתחבר אחד לשני, לא רק לנרות?</span>
+                    </div>
+                    <div class="question-item">
+                        <span class="question-number">5.</span>
+                        <span class="question-text">מה בעיניך הדרך הכי יפה "להאיר" את החברה שלנו היום?</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="discussion-intro">
+                <h3>💭 אזור הדיון</h3>
+                <p style="margin-bottom: 1rem;">אחרי שקראתם את השאלות, אתם מוזמנים לשתף את המחשבות שלכם:</p>
+                <ul>
+                    <li>איזו שאלה הכי דיברה אליכם?</li>
+                    <li>מה המחשבות והתובנות שלכם על הנושאים שעלו?</li>
+                    <li>איך אתם רואים את עצמכם "מאירים" את העולם סביבכם?</li>
+                    <li>מה אתם לוקחים מחנוכה לחיים שלכם?</li>
+                </ul>
+            </div>
+        </section>
+
+        <div class="comments-section">
+            <h4 class="comments-title">תגובות המשתתפים:</h4>
+            <div class="comments-sort-bar" id="commentsSortBar">
+                <label for="sortCommentsSelect" class="sort-label">סדר תגובות:</label>
+                <select id="sortCommentsSelect" class="sort-select">
+                    <option value="newest" selected>מהחדש לישן</option>
+                    <option value="oldest">מהישן לחדש</option>
+                    <option value="mostLiked">הכי הרבה לייקים</option>
+                </select>
+            </div>
+            <div class="comments-container" id="commentsContainer">
+                <!-- Comments will be loaded here -->
+            </div>
+
+            <!-- Reply Form -->
+            <div class="reply-form hidden" id="replyForm">
+                <h4 class="reply-title">השבת על תגובה:</h4>
+                <form id="replyCommentForm">
+                    <div class="form-group">
+                        <label for="replyName">שם:</label>
+                        <input type="text" id="replyName" name="replyName" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="replyPhone">טלפון:</label>
+                        <input type="tel" id="replyPhone" name="replyPhone" required>
+                        <small class="form-hint">לא יוצג בפומבי</small>
+                    </div>
+                    <div class="form-group">
+                        <label for="replyText">תגובה:</label>
+                        <div class="text-editor-container">
+                            <div class="formatting-toolbar">
+                                <button type="button" onclick="formatReplyText('bold')" title="מודגש">ב</button>
+                                <button type="button" onclick="formatReplyText('italic')" title="נטוי">נ</button>
+                                <button type="button" onclick="formatReplyText('underline')" title="קו תחתון">ק</button>
+                                <button type="button" onclick="formatReplyText('strikethrough')" title="קו חוצה">ח</button>
+                            </div>
+                            <div id="replyText" class="text-editor" contenteditable="true" data-placeholder="כתוב את תגובתך..."></div>
+                        </div>
+                    </div>
+                    <div class="reply-actions">
+                        <button type="button" class="cancel-btn" onclick="cancelReply()">ביטול</button>
+                        <button type="submit" class="reply-btn" id="submitReplyBtn">
+                            שלח תגובה
+                            <span class="loading-spinner hidden"></span>
+                        </button>
+                    </div>
+                </form>
+            </div>
+
+            <!-- Add Comment Form -->
+            <div class="comment-form">
+                <h4>הוסף תגובה:</h4>
+                <form id="commentForm">
+                    <div class="form-group">
+                        <label for="commentText">מה דעתך בנושא?</label>
+                        <div class="text-editor-container">
+                            <div class="formatting-toolbar">
+                                <button type="button" onclick="formatNewText('bold')" title="מודגש">ב</button>
+                                <button type="button" onclick="formatNewText('italic')" title="נטוי">נ</button>
+                                <button type="button" onclick="formatNewText('underline')" title="קו תחתון">ק</button>
+                                <button type="button" onclick="formatNewText('strikethrough')" title="קו חוצה">ח</button>
+                            </div>
+                            <div id="commentText" class="text-editor" contenteditable="true" data-placeholder="שתף את דעתך על הדיון..."></div>
+                        </div>
+                    </div>
+                    
+                    <div class="user-details-fields" id="userDetailsFields">
+                        <div class="form-group">
+                            <label for="commenterName">שם:</label>
+                            <input type="text" id="commenterName" name="commenterName" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="commenterPhone">טלפון:</label>
+                            <input type="tel" id="commenterPhone" name="commenterPhone" required>
+                            <small class="form-hint">לא יוצג בפומבי</small>
+                        </div>
+                    </div>
+                    
+                    <button type="submit" class="submit-btn" id="submitCommentBtn">
+                        שלח תגובה
+                        <span class="loading-spinner hidden"></span>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <footer class="modern-footer">
+        <p class="footer-credit" onclick="showContactInfo()">נבנה ע"י Y.D. Systems</p>
+    </footer>
+</body>
+</html>

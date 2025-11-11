@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="he">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>מעשה טוב - תנועת הנוער אור ישראלי</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/dark-mode.css">
+    <script src="js/config.js"></script>
+    <script src="js/common.js"></script>
+    <script src="js/mase-tov.js"></script>
+</head>
+<body>
+    <div id="loading" class="loading hidden">
+        <div class="spinner"></div>
+        <p>טוען...</p>
+    </div>
+
+    <header class="modern-header">
+        <div class="header-content">
+            <div class="logo-container">
+                <div class="main-logo">
+                    <img src="assets/logos/or-israeli-logo.png" alt="אור ישראלי">
+                </div>
+                <!-- <div class="logo-text">
+                    <h2>תנועת הנוער אור ישראלי</h2>
+                    <p>שתף מעשה טוב שלך</p>
+                </div> -->
+            </div>
+            <a href="index.html" class="back-button">
+                <span class="material-icons">arrow_back</span>
+                חזרה לדף הבית
+            </a>
+        </div>
+    </header>
+
+    <main class="modern-main">
+        <section class="hero-section">
+            <div class="hero-content">
+                <!-- <div class="hero-icon-left">
+                    <img src="assets/png/boy-salutes.png" alt="ילד מחווה סלוט" class="hanukia-icon">
+                </div> -->
+                <div class="hero-title">
+                    <h1 class="main-title">מעשה טוב</h1>
+                    <span class="material-icons heart-icon">favorite</span>
+                </div>
+                <p class="hero-question">שתף איתנו מעשה טוב שעשית היום</p>
+                <div class="hero-description">
+                    <p class="highlight-text">🌟 כל מעשה טוב חשוב</p>
+                    <h1>בואו ניצור יחד עולם טוב יותר!</h1>
+                </div>
+            </div>
+        </section>
+
+        <div class="good-deed-container">
+            <!-- ספירה של מעשים טובים -->
+            <!-- <div class="deed-counter">
+                <div class="counter-card">
+                    <span class="material-icons counter-icon">trending_up</span>
+                    <div class="counter-info">
+                        <h3>מעשים טובים היום</h3>
+                        <p class="counter-number" id="todayCount">0</p>
+                    </div>
+                </div>
+                <div class="counter-card">
+                    <span class="material-icons counter-icon">star</span>
+                    <div class="counter-info">
+                        <h3>סה"כ מעשים טובים</h3>
+                        <p class="counter-number" id="totalCount">0</p>
+                    </div>
+                </div>
+            </div> -->
+
+            <form id="good-deed-form" class="good-deed-form">
+                <div class="form-header">
+                    <h2>שתף מעשה טוב שלך</h2>
+                    <p>מלאו את הפרטים הבאים ושתפו איתנו מעשה טוב שעשיתם</p>
+                </div>
+
+                <div class="form-group">
+                    <label for="fullName">שם מלא:</label>
+                    <input type="text" id="fullName" name="fullName" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="phone">מספר טלפון:</label>
+                    <input type="tel" id="phone" name="phone" placeholder="050-123-4567" dir="ltr" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="branch">סניף:</label>
+                    <div class="branch-search-container">
+                        <input type="text" id="branch" name="branch" placeholder="חפש סניף..." required>
+                        <div class="branch-results" id="branchResults"></div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="deedType">סוג המעשה הטוב:</label>
+                    <select id="deedType" name="deedType" required>
+                        <option value="">בחר סוג מעשה טוב</option>
+                        <option value="helping">עזרה לזולת</option>
+                        <option value="charity">צדקה</option>
+                        <option value="kindness">חסד</option>
+                        <option value="respect">כבוד להורים/מורים</option>
+                        <option value="prayer">תפילה</option>
+                        <option value="study">לימוד תורה</option>
+                        <option value="other">אחר</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="deedDescription">תיאור המעשה הטוב:</label>
+                    <textarea id="deedDescription" name="deedDescription" 
+                              placeholder="ספרו לנו על המעשה הטוב שעשיתם..." 
+                              rows="4" required></textarea>
+                    <div class="char-counter">
+                        <span id="charCount">0</span>/500 תווים
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="feeling">איך הרגשת אחרי המעשה הטוב?</label>
+                    <div class="feeling-options">
+                        <div class="feeling-option">
+                            <input type="radio" id="feeling-great" name="feeling" value="great" required>
+                            <label for="feeling-great">
+                                <span class="material-icons">sentiment_very_satisfied</span>
+                                <span>מעולה!</span>
+                            </label>
+                        </div>
+                        <div class="feeling-option">
+                            <input type="radio" id="feeling-good" name="feeling" value="good" required>
+                            <label for="feeling-good">
+                                <span class="material-icons">sentiment_satisfied</span>
+                                <span>טוב</span>
+                            </label>
+                        </div>
+                        <div class="feeling-option">
+                            <input type="radio" id="feeling-okay" name="feeling" value="okay" required>
+                            <label for="feeling-okay">
+                                <span class="material-icons">sentiment_neutral</span>
+                                <span>בסדר</span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="toggle-wrapper">
+                    <label class="toggle-switch">
+                        <input type="checkbox" id="showPublicly" name="showPublicly" checked>
+                        <span class="toggle-slider"></span>
+                    </label>
+                    <span class="toggle-label">פרסום באתר</span>
+                </div>
+
+                <div class="checkbox-wrapper">
+                    <input type="checkbox" id="acceptTerms" name="acceptTerms" required>
+                    <label for="acceptTerms" class="checkbox-custom"></label>
+                    <span>אני מסכים ל<a href="#" class="terms-link" onclick="showTermsModal()">תקנון</a> ולתנאי השימוש</span>
+                </div>
+
+                <button type="submit" class="submit-button" id="submitBtn">
+                    <span class="btn-text">שלח מעשה טוב</span>
+                    <span class="loading-spinner hidden">
+                        <div class="spinner"></div>
+                        <span>שולח...</span>
+                    </span>
+                </button>
+            </form>
+        </div>
+
+        <!-- אזור הצגת מעשים טובים אחרונים -->
+        <section class="recent-deeds">
+            <h2>מעשים טובים אחרונים</h2>
+            <div class="deeds-grid" id="recentDeedsGrid">
+                <!-- מעשים טובים יוצגו כאן דינמית -->
+            </div>
+        </section>
+    </main>
+
+    <!-- Terms Modal -->
+    <div id="termsModal" class="modal-overlay">
+        <div class="modal">
+            <div class="modal-header">
+                <span class="material-icons modal-icon">description</span>
+                <h3 class="modal-title">תקנון ותנאי שימוש</h3>
+                <button class="modal-close" onclick="closeTermsModal()">&times;</button>
+            </div>
+            <div class="modal-content">
+                <div class="terms-content">
+                    <h3>תקנון מעשה טוב</h3>
+                    <p>ברוכים הבאים לאתר מעשה טוב של תנועת הנוער אור ישראלי!</p>
+                    
+                    <h3>כללי השיתוף:</h3>
+                    <ul>
+                        <li>שתפו רק מעשים טובים אמיתיים שעשיתם</li>
+                        <li>השתמשו בשפה מכובדת ונעימה</li>
+                        <li>אל תכללו פרטים אישיים של אחרים</li>
+                        <li>כל מעשה טוב חשוב, גם הקטן ביותר</li>
+                    </ul>
+                    
+                    <h3>פרטיות:</h3>
+                    <p>הפרטים שתמסרו ישמשו אך ורק לצורך שיתוף המעשה הטוב ולא יועברו לצד שלישי.</p>
+                    
+                    <h3>זכויות:</h3>
+                    <p>תנועת הנוער אור ישראלי שומרת לעצמה את הזכות לערוך או להסיר תוכן לא הולם.</p>
+                </div>
+            </div>
+            <div class="modal-actions">
+                <button class="modal-button secondary" onclick="closeTermsModal()">סגור</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Success Modal -->
+    <div id="successModal" class="modal-overlay" onclick="closeSuccessModal()">
+        <div class="modal success-modal" onclick="event.stopPropagation()">
+            <div class="modal-header">
+                <span class="material-icons modal-icon success-icon">celebration</span>
+                <h3 class="modal-title">מעשה טוב נשלח בהצלחה!</h3>
+                <button class="modal-close" onclick="closeSuccessModal()" type="button">&times;</button>
+            </div>
+            <div class="modal-content">
+                <div class="success-content">
+                    <div class="success-animation">
+                        <span class="material-icons">favorite</span>
+                        <span class="material-icons">star</span>
+                        <span class="material-icons">celebration</span>
+                    </div>
+                    <h3>תודה לך על השיתוף!</h3>
+                    <p>המעשה הטוב שלך נוסף למאגר המעשים הטובים שלנו. המשך לעשות טוב!</p>
+                    <div class="blessing">
+                        <p class="blessing-text">ברכה מיוחדת:</p>
+                        <p class="blessing-content">"יְהִי רָצוֹן מִלְּפָנֶיךָ ה' אֱלֹהֵינוּ וֵאלֹהֵי אֲבוֹתֵינוּ, שֶׁתְּבָרֵךְ אֶת כָּל מִי שֶׁעוֹשֶׂה טוֹב בָּעוֹלָם"</p>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-actions">
+                <button class="modal-button primary" onclick="closeSuccessModal()" type="button">תודה!</button>
+            </div>
+        </div>
+    </div>
+
+    <footer class="modern-footer">
+        <p class="footer-credit" onclick="showContactInfo()">נבנה ע"י Y.D. Systems</p>
+    </footer>
+</body>
+</html> 

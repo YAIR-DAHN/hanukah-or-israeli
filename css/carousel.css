@@ -1,0 +1,226 @@
+/* עיצוב הקרוסלה */
+.carousel-container {
+    position: relative;
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.carousel-wrapper {
+    position: relative;
+}
+
+.carousel-slides {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.carousel-slide {
+    min-width: 100%;
+    padding: 1rem;
+}
+
+/* כפתורי ניווט */
+.carousel-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    z-index: 2;
+}
+
+.carousel-button:hover {
+    background: rgba(0, 0, 0, 0.8);
+}
+
+.carousel-button.prev {
+    right: 10px;
+}
+
+.carousel-button.next {
+    left: 10px;
+}
+
+/* נקודות ניווט */
+.carousel-dots {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 1rem;
+}
+
+.carousel-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: var(--border-color);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.carousel-dot.active {
+    background: var(--primary-color);
+    transform: scale(1.2);
+}
+
+/* התאמה למובייל */
+@media screen and (max-width: 768px) {
+    .carousel-container {
+        padding: 0.5rem;
+    }
+    
+    .carousel-button {
+        width: 44px; /* Touch target minimum */
+        height: 44px;
+        font-size: 1.2rem;
+    }
+
+    .carousel-button.prev {
+        right: 5px;
+    }
+
+    .carousel-button.next {
+        left: 5px;
+    }
+
+    .carousel-slide {
+        padding: 0.5rem;
+    }
+    
+    .carousel-dot {
+        width: 12px;
+        height: 12px;
+        min-width: 12px;
+        min-height: 12px;
+    }
+    
+    .announcement-card {
+        border-radius: 12px;
+    }
+    
+    .announcement-overlay {
+        padding: 1rem;
+    }
+    
+    .announcement-overlay .material-icons {
+        font-size: 2rem;
+    }
+    
+    .announcement-overlay span {
+        font-size: 0.9rem;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .carousel-container {
+        padding: 0.25rem;
+    }
+    
+    .carousel-button {
+        width: 40px;
+        height: 40px;
+        font-size: 1rem;
+    }
+    
+    .carousel-slide {
+        padding: 0.25rem;
+    }
+    
+    .announcement-overlay .material-icons {
+        font-size: 1.5rem;
+    }
+    
+    .announcement-overlay span {
+        font-size: 0.85rem;
+    }
+}
+
+/* אנימציית מעבר */
+.carousel-slide {
+    /* opacity: 0.5; */
+    transition: opacity 0.5s ease;
+}
+
+.carousel-slide.active {
+    opacity: 1;
+}
+
+/* סגנון נגן VideoJS */
+.video-js {
+    width: 100% !important;
+    height: 100% !important;
+    position: absolute !important;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+.vjs-poster {
+    background-size: cover !important;
+}
+
+.vjs-default-skin .vjs-big-play-button {
+    top: 50% !important;
+    left: 50% !important;
+    transform: translate(-50%, -50%) !important;
+}
+
+/* קוד חדש - הוספת סגנונות עבור סרטונים בקרוסלה */
+.announcement-card.video-card {
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #000;
+    min-height: 300px;
+}
+
+.video-container {
+    position: relative;
+    width: 100%;
+    height: 0;
+    padding-bottom: 56.25%; /* יחס 16:9 */
+    background-color: #000;
+    overflow: hidden;
+}
+
+.announcement-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+.video-card .announcement-overlay {
+    background-color: rgba(0, 0, 0, 0.6);
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+    cursor: pointer;
+}
+
+.video-card .announcement-overlay .material-icons {
+    font-size: 3rem;
+    margin-bottom: 0.5rem;
+} 

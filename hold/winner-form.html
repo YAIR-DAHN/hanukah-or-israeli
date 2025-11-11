@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="he">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>טופס זוכים - תנועת הנוער אור ישראלי</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/dark-mode.css">
+    <link rel="stylesheet" href="css/winner-form.css">
+    <script src="js/config.js"></script>
+    <script src="js/common.js"></script>
+    <script src="js/winner-form.js"></script>
+</head>
+<body>
+    <div id="loading" class="loading hidden">
+        <div class="spinner"></div>
+        <p>טוען...</p>
+    </div>
+
+    <header class="modern-header">
+        <div class="header-content">
+            <div class="logo-container">
+                <div class="main-logo">
+                    <img src="assets/logos/or-israeli-logo.png" alt="אור ישראלי">
+                </div>
+                <div class="logo-text">
+                    <h2>תנועת הנוער אור ישראלי</h2>
+                    <p>טופס זוכים</p>
+                </div>
+            </div>
+            <a href="index.html" class="back-button">
+                <span class="material-icons">arrow_back</span>
+                חזרה לדף הבית
+            </a>
+        </div>
+    </header>
+
+    <main class="modern-main">
+        <section class="hero-section">
+            <div class="hero-content">
+                <div class="hero-title">
+                    <h1 class="main-title">טופס זוכים</h1>
+                    <span class="material-icons shofar-icon">emoji_events</span>
+                </div>
+                <p class="hero-question">ברכות לזוכים במבחן השבועי!</p>
+                <div class="hero-description">
+                    <p class="highlight-text">🏆 הזוכים השבועיים</p>
+                    <p>מלאו את הפרטים הבאים כדי לקבל את הפרס שלכם.</p>
+                </div>
+            </div>
+        </section>
+
+        <div class="winner-form-container">
+            <div class="form-header">
+                <h2>טופס זוכים</h2>
+                <p>מלאו את הפרטים הבאים כדי לקבל את הפרס שלכם</p>
+            </div>
+
+            <form id="winnerForm" class="winner-form">
+                <div class="form-group">
+                    <label for="winnerName">שם מלא:</label>
+                    <input type="text" id="winnerName" name="winnerName" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="winnerPhone">מספר טלפון:</label>
+                    <input type="tel" id="winnerPhone" name="winnerPhone" placeholder="050-123-4567" dir="ltr" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="winnerBranch">סניף:</label>
+                    <div class="branch-search-container">
+                        <input type="text" id="winnerBranch" name="winnerBranch" placeholder="חפש סניף..." required>
+                        <div class="branch-results" id="branchResults"></div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="winnerAge">גיל:</label>
+                    <select id="winnerAge" name="winnerAge" required>
+                        <option value="">בחר גיל</option>
+                        <option value="12">12</option>
+                        <option value="13">13</option>
+                        <option value="14">14</option>
+                        <option value="15">15</option>
+                        <option value="16">16</option>
+                        <option value="17">17</option>
+                        <option value="18">18</option>
+                        <option value="19">19</option>
+                        <option value="20">20</option>
+                        <option value="21">21</option>
+                        <option value="22">22</option>
+                        <option value="23">23</option>
+                        <option value="24">24</option>
+                        <option value="25">25</option>
+                        <option value="26">26</option>
+                        <option value="27">27</option>
+                        <option value="28">28</option>
+                        <option value="29">29</option>
+                        <option value="30">30</option>
+                        <option value="31">31</option>
+                        <option value="32">32</option>
+                        <option value="33">33</option>
+                        <option value="34">34</option>
+                        <option value="35">35</option>
+                        <option value="36">36</option>
+                        <option value="37">37</option>
+                        <option value="38">38</option>
+                        <option value="39">39</option>
+                        <option value="40">40</option>
+                        <option value="41">41</option>
+                        <option value="42">42</option>
+                        <option value="43">43</option>
+                        <option value="44">44</option>
+                        <option value="45">45</option>
+                        <option value="46">46</option>
+                        <option value="47">47</option>
+                        <option value="48">48</option>
+                        <option value="49">49</option>
+                        <option value="50">50</option>
+                        <option value="51">51</option>
+                        <option value="52">52</option>
+                        <option value="53">53</option>
+                        <option value="54">54</option>
+                        <option value="55">55</option>
+                        <option value="56">56</option>
+                        <option value="57">57</option>
+                        <option value="58">58</option>
+                        <option value="59">59</option>
+                        <option value="60">60</option>
+                        <option value="61">61</option>
+                        <option value="62">62</option>
+                        <option value="63">63</option>
+                        <option value="64">64</option>
+                        <option value="65">65</option>
+                        <option value="66">66</option>
+                        <option value="67">67</option>
+                        <option value="68">68</option>
+                        <option value="69">69</option>
+                        <option value="70">70</option>
+                        <option value="71">71</option>
+                        <option value="72">72</option>
+                        <option value="73">73</option>
+                        <option value="74">74</option>
+                        <option value="75">75</option>
+                        <option value="76">76</option>
+                        <option value="77">77</option>
+                        <option value="78">78</option>
+                        <option value="79">79</option>
+                        <option value="80">80</option>
+                        <option value="81">81</option>
+                        <option value="82">82</option>
+                        <option value="83">83</option>
+                        <option value="84">84</option>
+                        <option value="85">85</option>
+                        <option value="86">86</option>
+                        <option value="87">87</option>
+                        <option value="88">88</option>
+                        <option value="89">89</option>
+                        <option value="90">90</option>
+                        <option value="91">91</option>
+                        <option value="92">92</option>
+                        <option value="93">93</option>
+                        <option value="94">94</option>
+                        <option value="95">95</option>
+                        <option value="96">96</option>
+                        <option value="97">97</option>
+                        <option value="98">98</option>
+                        <option value="99">99</option>
+                        <option value="100">100</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="winnerScore">ציון במבחן:</label>
+                    <input type="number" id="winnerScore" name="winnerScore" min="0" max="100" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="winnerTime">זמן השלמת המבחן (דקות):</label>
+                    <input type="number" id="winnerTime" name="winnerTime" min="1" max="60" required>
+                </div>
+
+                <button type="submit" class="primary-button" id="submitWinnerBtn">
+                    <span class="btn-text">שלח טופס זוכה</span>
+                    <span class="loading-spinner hidden">
+                        <div class="spinner"></div>
+                        <span>שולח...</span>
+                    </span>
+                </button>
+            </form>
+        </div>
+    </main>
+
+    <footer class="modern-footer">
+        <p class="footer-credit" onclick="showContactInfo()">נבנה ע"י Y.D. Systems</p>
+    </footer>
+</body>
+</html> 

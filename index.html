@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="he">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="תנועת הנוער אור ישראלי - חידון חנוכה">
+    <meta property="og:title" content="חידון חנוכה - אור ישראלי">
+    <meta property="og:description" content="פעילות חינוכית בנושא חנוכה - חידות שבועיות ודיונים">
+    <meta property="og:image" content="./assets/logos/or-israeli-logo.png">
+    <meta name="theme-color" content="#B8860B" media="(prefers-color-scheme: light)">
+    <meta name="theme-color" content="#B8860B" media="(prefers-color-scheme: dark)">
+    <meta name="msapplication-navbutton-color" content="#B8860B">
+    <meta name="apple-mobile-web-app-status-bar-style" content="#B8860B">
+
+    <link rel="icon" type="image/png" href="./assets/logos/or-israeli-logo.png">
+    <link rel="apple-touch-icon" href="./assets/logos/or-israeli-logo.png">
+
+    <!-- הוספת VideoJS -->
+    <link href="https://vjs.zencdn.net/8.5.2/video-js.css" rel="stylesheet" />
+
+    <title>חידון חנוכה - אור ישראלי</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik+Doodle+Shadow&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/dark-mode.css">
+    <link rel="stylesheet" href="css/carousel.css">
+    <script src="js/config.js"></script>
+    <script src="js/common.js"></script>
+    <script src="js/updates.js"></script>
+    <script src="js/animations.js"></script>
+    <script src="js/viewer.js"></script>
+    <script src="js/carousel.js"></script>
+    <script src="js/main.js"></script>
+</head>
+
+<body>
+    <div id="loading" class="loading hidden">
+        <div class="spinner"></div>
+        <p>טוען...</p>
+    </div>
+
+    <header class="modern-header">
+        <div class="header-content-home-page">
+            <div class="logo-container">
+                <div class="main-logo">
+                    <img src="assets/logos/or-israeli-logo.png" alt="אור ישראלי">
+                </div>
+                <!-- <div class="logo-text">
+                    <h2>תנועת הנוער אור ישראלי</h2>
+                    <p>רב יצחק דוד גרוסמן פרס ישראל</p>
+                    <p>תנועת נוער בערכי היהדות</p>
+                </div> -->
+            </div>
+        </div>
+    </header>
+
+    <main class="modern-main">
+        <!-- אזור ברוכים הבאים -->
+        <section class="hero-section animate-on-scroll">
+            <div class="hero-content">
+                <div class="hero-icon-left">
+                    <img src="assets/png/hanukia.png" alt="חנוכיה" class="hanukia-icon">
+                </div>
+                <div class="hero-title">
+                    <h1 class="main-title"> חידון חנוכה
+                        <div class="shofar-icon">🕎</div>
+                </div>
+                <h1 class="hero-question">היכונו לחידון חנוכה!</h1>
+                <div class="hero-description">
+                    <p class="highlight-text">תנועת הנוער אור ישראלי</p>
+                    <p>בתוכנית החינוכית - חנוכה</p>
+                </div>
+                <div class="hero-features">
+                    <a href="#" class="nav-main" onclick="handleQuizNavigation(event)">
+                        <div class="feature-item">
+                            <span class="feature-icon">🎁</span>
+                            <span>עונים על החידות בנושא חנוכה ונכנסים להגרלות</span>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- אזור דיון  -->
+        <section class="discussion-cta-section animate-on-scroll">
+            <div class="discussion-cta-container">
+                <div class="discussion-cta-icon">🕎</div>
+                <h2 class="discussion-cta-title">השתתפו וחוו דעתכם בדיון בנושא חנוכה</h2>
+                <p class="discussion-cta-subtitle">דיון ערכי וחינוכי מעמיק על משמעות חנוכה - שתפו את דעתכם והצטרפו לקהילה</p>
+                <a href="discussion-hanukkah.html" class="discussion-cta-button">
+                    <span class="material-icons">forum</span>
+                    הצטרף לדיון
+                    <span class="material-icons">arrow_forward</span>
+                </a>
+            </div>
+        </section>
+
+        <!-- תפריט ניווט -->
+        <nav class="modern-nav">
+            <a href="#" class="nav-card" onclick="handleQuizNavigation(event)">
+                <div class="nav-icon">🕎</div>
+                <h3>חידון חנוכה</h3>
+                <p>בדוק את הידע שלך</p>
+            </a>
+            <!-- <a href="discussion-topics.html" class="nav-card">
+                <div class="nav-icon">📚</div>
+                <h3>לימוד חידון</h3>
+                <p>שתף את דעתך בחידון</p>
+            </a> -->
+            <a href="https://did.li/EnOIw" class="nav-card" target="_blank" rel="noopener">
+                <div class="nav-icon">👥</div>
+                <h3>קבוצת העדכונים</h3>
+                <p>הישאר מעודכן</p>
+            </a>
+            <a href="winners.html" class="nav-card">
+                <div class="nav-icon">🏆</div>
+                <h3>הזוכים</h3>
+                <p>הכירו את הזוכים</p>
+            </a>
+            <!-- <a href="mase-tov.html" class="nav-card">
+                <div class="nav-icon">🕎</div>
+                <h3>מעשה חנוכה</h3>
+                <p>שתף מעשה חנוכה שעשית</p>
+            </a> -->
+            <!-- <a href="#downloads-section" class="nav-card" id="download-booklet-nav">
+                <div class="nav-icon">📖</div>
+                <h3>חוברת חידון חנוכה</h3>
+                <p>להורדה</p>
+            </a> -->
+        </nav>
+
+
+        <!-- אזור מודעות -->
+        <section id="announcements-section" class="announcements-section animate-on-scroll">
+            <h2 class="section-title">
+                <span class="title-icon">📢</span>
+                לוח מודעות
+            </h2>
+            <div class="carousel-container">
+                <div class="carousel-wrapper">
+                    <div class="carousel-slides">
+                        <!-- מודעה ראשונה -->
+                        <div class="carousel-slide">
+                            <div class="announcement-card">
+                                <img src="assets/ads/add1.jpg" alt="מודעת פרסים" class="announcement-image">
+                                <div class="announcement-overlay">
+                                    <span class="material-icons">fullscreen</span>
+                                    <span>לחץ להגדלה</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-dots"></div>
+            </div>
+        </section>
+
+        <!-- אזור עדכונים -->
+        <section class="updates-section animate-on-scroll">
+            <h2 class="section-title">
+                <span class="title-icon">📢</span>
+                עדכונים אחרונים
+            </h2>
+            <div id="updates-container" class="updates-container">
+                <div class="loading-updates">
+                    <div class="spinner"></div>
+                    <p>טוען עדכונים...</p>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- אזור תמיכה -->
+        <section class="support-section animate-on-scroll">
+            <p class="support-text">לשאלות בנושא פעילות חנוכה:</p>
+            <div class="support-contacts">
+                <a href="https://wa.me/972583730000" class="support-contact" target="_blank" rel="noopener">
+                    <span class="contact-icon">💬</span>
+                    <span dir="ltr">058-373-0000</span>
+                </a>
+                <a href="tel:0548473336" class="support-contact">
+                    <span class="contact-icon">📞</span>
+                    <span dir="ltr">054-847-3336</span>
+                </a>
+            </div>
+        </section>
+
+        <!-- אזור שיתוף -->
+        <section class="share-section animate-on-scroll">
+            <p class="share-text">אתם בעניין? אלופים! <br> אבל מה עם החברים?</p>
+            <button class="share-button ripple" onclick="shareWebsite()">
+                <span class="share-icon">📤</span>
+                <span>שתפו את החברים</span>
+            </button>
+        </section>
+    </main>
+
+    <footer class="modern-footer">
+        <p class="footer-credit" onclick="showContactInfo()">נבנה ע"י Y.D. Systems</p>
+    </footer>
+
+    <!-- וידאו JS -->
+    <script src="https://vjs.zencdn.net/8.5.2/video.min.js"></script>
+    <script>
+        // אתחול VideoJS כשהדף נטען
+        document.addEventListener('DOMContentLoaded', function () {
+            if (document.getElementById('carouselVideo')) {
+                const player = videojs('carouselVideo');
+                const overlay = document.querySelector('.video-card .ad-overlay');
+
+                if (overlay) {
+                    overlay.addEventListener('click', function (e) {
+                        e.stopPropagation();
+                        player.play();
+                        overlay.style.opacity = '0';
+                        overlay.style.visibility = 'hidden';
+                    });
+
+                    player.on('ended', function () {
+                        overlay.style.opacity = '1';
+                        overlay.style.visibility = 'visible';
+                    });
+                }
+            }
+        });
+    </script>
+</body>
+
+</html>

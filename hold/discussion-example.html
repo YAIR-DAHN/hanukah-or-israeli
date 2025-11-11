@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="he">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>דוגמה לדיון נוסף - תנועת הנוער אור ישראלי</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/discussion.css">
+    <link rel="stylesheet" href="css/dark-mode.css">
+    <script src="js/config.js"></script>
+    <script src="js/common.js"></script>
+    <script src="js/discussion.js"></script>
+    <script>
+        // הגדרת מזהה הדיון הנוכחי - שונה לכל דיון
+        window.DISCUSSION_ID = 'example-discussion';
+    </script>
+</head>
+<body>
+    <div id="loading" class="loading hidden">
+        <div class="spinner"></div>
+        <p>טוען...</p>
+    </div>
+
+    <header class="modern-header">
+        <div class="header-content">
+            <div class="logo-container">
+                <div class="main-logo">
+                    <img src="assets/logos/or-israeli-logo.png" alt="אור ישראלי">
+                </div>
+            </div>
+            <a href="index.html" class="back-button">
+                <span class="material-icons">arrow_back</span>
+                חזרה לדף הבית
+            </a>
+        </div>
+    </header>
+
+    <main class="modern-main">
+        <!-- כפתור חזרה -->
+        <div class="back-button-container">
+            <a href="discussion-topics.html" class="back-button">
+                <span class="material-icons">arrow_back</span>
+                חזרה לנושאי דיון
+            </a>
+        </div>
+
+        <section class="discussion-area">
+            <h2 class="discussion-title">כותרת הדיון החדש</h2>
+            
+            <div class="discussion-question">
+                <h3>שאלה לדיון</h3>
+                <ul>
+                    <li>שאלה ראשונה לדיון?</li>
+                    <li>שאלה שנייה לדיון?</li>
+                    <li>שאלה שלישית לדיון?</li>
+                </ul>
+            </div>
+
+            <div class="source-block">
+                <strong>כותרת מקור ראשון</strong><br>
+                <span>תוכן המקור הראשון...</span>
+                <div class="example-block">
+                    <span class="example-label">דוגמה:</span>
+                    <span>דוגמה מהמקור...</span>
+                </div>
+                <div class="source-ref">
+                    <b>מקורות:</b> מקור ראשון
+                </div>
+            </div>
+
+            <div class="source-block">
+                <strong>כותרת מקור שני</strong><br>
+                <span>תוכן המקור השני...</span>
+            </div>
+
+            <div class="discussion-intro">
+                <h3>אזור הדיון</h3>
+                <ul>
+                    <li>נקודה לדיון ראשונה</li>
+                    <li>נקודה לדיון שנייה</li>
+                    <li>נקודה לדיון שלישית</li>
+                </ul>
+            </div>
+        </section>
+
+        <div class="comments-section">
+            <h4 class="comments-title">תגובות המשתתפים:</h4>
+            <div class="comments-sort-bar" id="commentsSortBar">
+                <label for="sortCommentsSelect" class="sort-label">סדר תגובות:</label>
+                <select id="sortCommentsSelect" class="sort-select">
+                    <option value="newest" selected>מהחדש לישן</option>
+                    <option value="oldest">מהישן לחדש</option>
+                    <option value="mostLiked">הכי הרבה לייקים</option>
+                </select>
+            </div>
+            <div class="comments-container" id="commentsContainer">
+                <!-- Comments will be loaded here -->
+            </div>
+
+            <!-- Reply Form -->
+            <div class="reply-form hidden" id="replyForm">
+                <h4 class="reply-title">השבת על תגובה:</h4>
+                <form id="replyCommentForm">
+                    <div class="form-group">
+                        <label for="replyName">שם:</label>
+                        <input type="text" id="replyName" name="replyName" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="replyPhone">טלפון:</label>
+                        <input type="tel" id="replyPhone" name="replyPhone" required>
+                        <small class="form-hint">לא יוצג בפומבי</small>
+                    </div>
+                    <div class="form-group">
+                        <label for="replyText">תגובה:</label>
+                        <div class="text-editor-container">
+                            <div class="formatting-toolbar">
+                                <button type="button" onclick="formatReplyText('bold')" title="מודגש">ב</button>
+                                <button type="button" onclick="formatReplyText('italic')" title="נטוי">נ</button>
+                                <button type="button" onclick="formatReplyText('underline')" title="קו תחתון">ק</button>
+                                <button type="button" onclick="formatReplyText('strikethrough')" title="קו חוצה">ח</button>
+                            </div>
+                            <div id="replyText" class="text-editor" contenteditable="true" data-placeholder="כתוב את תגובתך..."></div>
+                        </div>
+                    </div>
+                    <div class="reply-actions">
+                        <button type="button" class="cancel-btn" onclick="cancelReply()">ביטול</button>
+                        <button type="submit" class="reply-btn" id="submitReplyBtn">
+                            שלח תגובה
+                            <span class="loading-spinner hidden"></span>
+                        </button>
+                    </div>
+                </form>
+            </div>
+
+            <!-- Add Comment Form -->
+            <div class="comment-form">
+                <h4>הוסף תגובה:</h4>
+                <form id="commentForm">
+                    <div class="form-group">
+                        <label for="commentText">מה דעתך בנושא?</label>
+                        <div class="text-editor-container">
+                            <div class="formatting-toolbar">
+                                <button type="button" onclick="formatNewText('bold')" title="מודגש">ב</button>
+                                <button type="button" onclick="formatNewText('italic')" title="נטוי">נ</button>
+                                <button type="button" onclick="formatNewText('underline')" title="קו תחתון">ק</button>
+                                <button type="button" onclick="formatNewText('strikethrough')" title="קו חוצה">ח</button>
+                            </div>
+                            <div id="commentText" class="text-editor" contenteditable="true" data-placeholder="שתף את דעתך על הדיון..."></div>
+                        </div>
+                    </div>
+                    
+                    <div class="user-details-fields hidden" id="userDetailsFields">
+                        <div class="form-group">
+                            <label for="commenterName">שם:</label>
+                            <input type="text" id="commenterName" name="commenterName" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="commenterPhone">טלפון:</label>
+                            <input type="tel" id="commenterPhone" name="commenterPhone" required>
+                            <small class="form-hint">לא יוצג בפומבי</small>
+                        </div>
+                    </div>
+                    
+                    <button type="submit" class="submit-btn" id="submitCommentBtn">
+                        שלח תגובה
+                        <span class="loading-spinner hidden"></span>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <footer class="modern-footer">
+        <p class="footer-credit" onclick="showContactInfo()">נבנה ע"י Y.D. Systems</p>
+    </footer>
+</body>
+</html>
