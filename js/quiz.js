@@ -25,15 +25,7 @@ async function startQuiz(userDetails) {
         return;
     }
 
-    // בדיקת תקינות הסניף
-    if (!validateBranch(document.getElementById('branch'))) {
-        showModal({
-            title: 'שגיאת טופס',
-            message: 'אנא בחר סניף מהרשימה',
-            icon: 'warning'
-        });
-        return;
-    }
+    // הסניף קבוע ל"אפרת" - אין צורך בבדיקה
 
     showLoading();
     try {
@@ -624,26 +616,10 @@ function updateBranchList(branches) {
     });
 }
 
-// וולידציה של הסניף
+// וולידציה של הסניף - הסניף קבוע ל"אפרת"
 function validateBranch(input) {
-    const branch = input.value;
+    // הסניף תמיד "אפרת" - תמיד נחזיר true
     const errorElement = input.parentElement.querySelector('.error-message');
-    
-    if (!cache.branches) {
-        return true; // נאפשר אם הנתונים עדיין לא נטענו
-    }
-    
-    if (!cache.branches.includes(branch)) {
-        input.classList.add('invalid');
-        if (!errorElement) {
-            const error = document.createElement('div');
-            error.className = 'error-message';
-            error.textContent = 'אנא בחר סניף מהרשימה';
-            input.parentElement.appendChild(error);
-        }
-        return false;
-    }
-    
     input.classList.remove('invalid');
     if (errorElement) {
         errorElement.remove();
@@ -656,15 +632,9 @@ function initializeEventListeners() {
     document.getElementById('userDetailsForm').addEventListener('submit', (e) => {
         e.preventDefault();
         
-        // בדיקת תקינות הסניף לפני שליחה
-        const branchInput = document.getElementById('branch');
-        if (!validateBranch(branchInput)) {
-            return;
-        }
-
         const formData = {
             userName: document.getElementById('userName').value,
-            branch: document.getElementById('branch').value,
+            branch: 'אפרת', // הסניף תמיד "אפרת"
             phone: document.getElementById('phone').value
         };
 
@@ -689,15 +659,7 @@ function initializeEventListeners() {
         }
     });
 
-    // וולידציה לשדה הסניף
-    const branchInput = document.getElementById('branch');
-    branchInput.addEventListener('input', () => {
-        validateBranch(branchInput);
-    });
-
-    branchInput.addEventListener('blur', () => {
-        validateBranch(branchInput);
-    });
+    // הסניף קבוע ל"אפרת" - אין צורך בוולידציה
 
     // עדכון פונקציית prevQuestion לטיפול בביטול החידון
     document.getElementById('prevQuestion').addEventListener('click', () => {
@@ -1065,9 +1027,12 @@ document.addEventListener('DOMContentLoaded', async () => {
         const userDetails = JSON.parse(localStorage.getItem('userDetails') || '{}');
         if (userDetails.userName) {
             document.getElementById('userName').value = userDetails.userName;
-            document.getElementById('branch').value = userDetails.branch;
+            document.getElementById('branch').value = 'אפרת'; // הסניף תמיד "אפרת"
             document.getElementById('phone').value = userDetails.phone;
             document.getElementById('rememberMe').checked = true;
+        } else {
+            // וידוא שהסניף תמיד "אפרת"
+            document.getElementById('branch').value = 'אפרת';
         }
 
         // המתנה לסיום טעינת הנתונים
@@ -1077,14 +1042,6 @@ document.addEventListener('DOMContentLoaded', async () => {
         submitButton.disabled = false;
         submitButton.classList.remove('loading-button');
         submitButton.innerHTML = 'התחל חידון';
-
-            // עדכון רשימת הסניפים בממשק
-    if (cache.branches) {
-        console.log('Branches loaded:', cache.branches.length);
-        updateBranchList(cache.branches);
-    } else {
-        console.log('No branches loaded');
-    }
 
     } catch (error) {
         console.error('שגיאה באתחול:', error);
